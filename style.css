@@ -1,9 +1,10 @@
 body {
-	background-color: #10f871;
+	background-color: #0d0d0d;
 	margin: 0;
 	padding: 0;
 }
 
+/* main container styles */
 .container {
 	display: flex;
 	flex-direction: column;
@@ -18,4 +19,71 @@ body {
 	border: 1px solid #10f871;
 	border-radius: 8px;
 	box-shadow: 5px 10px 18px rgba(0, 0, 0, 0.5);
+}
+
+/* main container's header styles */
+.container-header {
+	display: flex;
+	flex-direction: column;
+	justify-items: center;
+	align-items: center;
+	width: 100%;
+	padding: 20px 0;
+}
+
+/* main container's header: header section */
+.container-header-subHeader {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 12px;
+	width: 100%;
+	padding: 20px;
+}
+
+.container-header-subHeader svg {
+	width: 22px;
+	height: 22px;
+	flex-shrink: 0;
+	fill: #10f871;
+}
+
+.container-header-subHeader h3 {
+	color: white;
+	font-family: Inconsolata, monospace;
+	font-weight: 700;
+	margin: 0;
+}
+
+/* main container's header: content section */
+.container-header-content {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	position: relative;
+	min-width: 40%;
+}
+
+.container-header-content .generated-pass-input {
+    width: 100%;
+    background-color: #444;
+    padding-right: 40px;
+    height: 40px;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    font-size: 16px;
+	text-shadow: 15px 15px 18px rgba(0, 0, 0, 0.7);
+    color: white;
+}
+
+.container-header-content svg {
+	width: 26px;
+	height: 26px;
+	position: absolute;
+	right: 12px;
+	top: 50%;
+	transform: translateY(-50%);
+	cursor: pointer;
+	fill: #10f871;
 }
