@@ -53,6 +53,7 @@ body {
 	font-family: Inconsolata, monospace;
 	font-weight: 700;
 	margin: 0;
+	letter-spacing: 1px;
 }
 
 /* main container's header: content section */
@@ -86,4 +87,112 @@ body {
 	transform: translateY(-50%);
 	cursor: pointer;
 	fill: #10f871;
+}
+
+/* main container's body */
+.container-body {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	padding: 20px 25px;
+	margin-top: 30px;
+	border: 1px solid rgba(255, 255, 255, 0.1);
+	border-radius: 8px;
+	background-color: #2d2d2d;
+}
+
+.container-body-header {
+	color: #10f871;
+	padding: 10px 15px;
+	font-family: "Inconsolata", monospace;
+	font-size: 20px;
+	margin: 0 0 20px 0;
+}
+
+.container-body-content {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	gap: 60px;
+}
+
+.container-body-content-checkboxes {
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+	color: #ddd;
+}
+
+.container-body-content-checkboxes label {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	font-size: 16px;
+}
+
+.container-body-content-checkboxes input[type="checkbox"] {
+	width: 18px;
+	height: 18px;
+	accent-color: #10f871;
+}
+
+.container-body-content-passlen {
+	display: flex;
+	flex-direction: column;
+	color: #ddd;
+	gap: 12px;
+	min-width: 250px;
+}
+
+.container-body-content-passlen label {
+	font-size: 16px;
+}
+
+.container-body-content-passlen input[type="number"] {
+	background: #444;
+	border: 1px solid #555;
+	padding: 6px 10px;
+	color: white;
+	border-radius: 5px;
+	width: 80px;
+	font-size: 15px;
+}
+
+.container-body-content-passlen input[type="number"]:focus {
+	color: #10f871;
+	border-color: #10f871;
+	outline: none;
+	box-shadow: 0 0 6px rgba(16, 248, 113, 0.5);
+}
+
+.container-body-content-passlen input[type="range"] {
+	-webkit-appearance: none;
+	width: 100%;
+	height: 4px;
+	background-color: #444;
+	border-radius: 2px;
+	outline: none;
+	cursor: pointer;
+	transition: background 0.2s;
+}
+
+.container-body-content-passlen input[type="range"]::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	width: 18px;
+	height: 18px;
+	background: #10f871;
+	border-radius: 50%;
+	border: 2px solid #10f871;
+	box-shadow: 0 0 6px rgba(16, 248, 113, 0.8);
+	transition: 0.2s;
+	cursor: pointer;
+}
+
+.container-body-content-passlen input[type="range"]::-webkit-slider-thumb:hover {
+	transform: scale(1.1);
+	box-shadow: 0 0 10px rgba(16, 248, 113, 1);
+}
+
+.container-body-content-passlen input[type="range"]:active::-webkit-slider-thumb {
+	transform: scale(0.95);
 }
