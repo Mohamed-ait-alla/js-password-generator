@@ -78,15 +78,26 @@ body {
     color: white;
 }
 
-.container-header-content svg {
-	width: 26px;
-	height: 26px;
+.container-header-content svg.copy-icon {
+	width: 24px;
+	height: 24px;
 	position: absolute;
 	right: 12px;
 	top: 50%;
 	transform: translateY(-50%);
 	cursor: pointer;
 	fill: #10f871;
+	transition: transform 0.2s ease, filter 0.25s ease;
+}
+
+.container-header-content svg.copy-icon:hover {
+	transform: scale(1.12);
+	filter: drop-shadow(0 0 6px #10f871);
+}
+
+.container-header-content svg.copy-icon:active {
+	transform: scale(0.92);
+	filter: drop-shadow(0 0 2px #10f871);
 }
 
 /* main container's body */
