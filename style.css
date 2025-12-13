@@ -145,6 +145,21 @@ body {
 	width: 18px;
 	height: 18px;
 	accent-color: #10f871;
+	cursor: pointer;
+	transition: transform 0.1s ease;
+}
+
+.container-body-content-checkboxes input[type="checkbox"]:active {
+	transform: scale(0.95);
+}
+
+.container-body-content-checkboxes input[type="checkbox"]:checked {
+	accent-color: #10f871;
+}
+
+.container-body-content-checkboxes input[type="checkbox"]:focus-visible {
+	outline: 2px solid #10f871;
+	outline-offset: 2px;
 }
 
 .container-body-content-passlen {
