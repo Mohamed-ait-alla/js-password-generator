@@ -182,10 +182,10 @@ body {
 	border-radius: 5px;
 	width: 80px;
 	font-size: 15px;
+	color: #10f871;
 }
 
 .container-body-content-passlen input[type="number"]:focus {
-	color: #10f871;
 	border-color: #10f871;
 	outline: none;
 	box-shadow: 0 0 6px rgba(16, 248, 113, 0.5);
