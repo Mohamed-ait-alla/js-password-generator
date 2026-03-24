@@ -9,6 +9,9 @@ const	lowercaseCheckbox = document.querySelector('input[name="lowercase"]');
 const	numbersCheckbox = document.querySelector('input[name="numbers"]');
 const	symbolsCheckbox = document.querySelector('input[name="symbols"]');
 
+const	passwordGeneratedBtn = document.getElementById("generated-password");
+const	copyIcon = document.querySelector(".copy-icon");
+
 
 // update number input when range get updated
 rangeInput.addEventListener("input", () => {
@@ -79,5 +82,30 @@ generateBtn.addEventListener("click", () => {
 		passwordGenerated.push(allChars[Math.floor(Math.random() * allChars.length)]);
 	}
 
-	console.log("pass generated is: ", passwordGenerated.sort(() => Math.random() - 0.5).join(""));
+	let finalGeneratedPass = passwordGenerated.sort(() => Math.random() - 0.5).join("");
+
+	passwordGeneratedBtn.value = finalGeneratedPass;
+
+	console.log("pass generated is: ", finalGeneratedPass);
+});
+
+// Copy the generated password into clipboard
+copyIcon.addEventListener("click", async () => {
+  const password = passwordGeneratedBtn.value;
+
+  if (!password) return;
+
+  try {
+    await navigator.clipboard.writeText(password);
+
+    // feedback
+    copyIcon.style.fill = "green";
+
+    setTimeout(() => {
+      copyIcon.style.fill = "";
+    }, 1500);
+
+  } catch (err) {
+    console.error("Copy failed:", err);
+  }
 });
