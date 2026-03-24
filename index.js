@@ -46,17 +46,38 @@ generateBtn.addEventListener("click", () => {
 	const	useSymbols = symbolsCheckbox.checked;
 
 	const	upperCasePool = "ABCDEFGHIKLMNOPQRSTVXYZ";
+	const	lowerCasePool = "abcdefghiklmnopqrstvxyz";
+	const	numbersPool = "0123456789";
+	const	symbolsPool = "!@#$%&*()?.";
+
+	let passwordGenerated  = [];
+	let allChars = "";
+
+	if (useUppercase)
+	{
+		allChars += upperCasePool;
+		passwordGenerated.push(upperCasePool[Math.floor(Math.random() * upperCasePool.length)]);
+	}
 	if (useLowercase)
-		var lowerCasePool = "abcdefghiklmnopqrstvxyz";
+	{
+		allChars += lowerCasePool;
+		passwordGenerated.push(lowerCasePool[Math.floor(Math.random() * lowerCasePool.length)]);
+	}
 	if (useNumbers)
-		var numbersPool = "0123456789";
+	{
+		allChars += numbersPool;
+		passwordGenerated.push(numbersPool[Math.floor(Math.random() * numbersPool.length)]);
+	}
 	if (useSymbols)
-		var symbolsPool = "!@#$%&*()?."
+	{
+		allChars += symbolsPool;
+		passwordGenerated.push(symbolsPool[Math.floor(Math.random() * symbolsPool.length)]);
+	}
 
+	while(passwordGenerated.length < passlength)
+	{
+		passwordGenerated.push(allChars[Math.floor(Math.random() * allChars.length)]);
+	}
 
-	console.log("length is: ", passlength);
-	console.log("use Uppercase: ", useUppercase);
-	console.log("use Lowercase: ", useLowercase);
-	console.log("use numbers: ", useNumbers);
-	console.log("use symbols: ", useSymbols);
+	console.log("pass generated is: ", passwordGenerated.sort(() => Math.random() - 0.5).join(""));
 });
