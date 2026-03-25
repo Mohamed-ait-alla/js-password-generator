@@ -19,14 +19,17 @@ rangeInput.addEventListener("input", () => {
 });
 
 // update range input when number input get updated
-numberInput.addEventListener("input", () => {
-	let val = numberInput.value;
+numberInput.addEventListener("blur", () => {
+	let val = parseInt(numberInput.value, 10);
 
+	if (isNaN(val)) 
+		val = 8;
 	if (val < 8)
 		val = 8;
 	if (val > 25)
 		val = 25;
 
+	numberInput.value = val;
 	rangeInput.value = val;
 });
 
